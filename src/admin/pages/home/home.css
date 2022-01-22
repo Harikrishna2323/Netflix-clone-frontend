@@ -1,0 +1,16 @@
+.adminHome {
+  display: flex;
+  width: initial;
+}
+
+.adminHomeComponents {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  flex: 1;
+}
+
+.adminHomeWidgets {
+  display: flex;
+  margin: 20px;
+}
