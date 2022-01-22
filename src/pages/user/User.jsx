@@ -21,7 +21,7 @@ export default function User() {
   useEffect(() => {
     const getUser = async () => {
       const { data } = await axios.get(
-        `/api/users/find/${id}`,
+        `https://netflix-clone-hkb.herokuapp.com/api/users/find/${id}`,
         { username, email, phone, from },
         {
           headers: {

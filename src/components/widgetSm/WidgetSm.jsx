@@ -11,11 +11,14 @@ export default function WidgetSm() {
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/api/users", {
-          headers: {
-            token: "Bearer " + user.token,
-          },
-        });
+        const res = await axios.get(
+          "https://netflix-clone-hkb.herokuapp.com/api/users",
+          {
+            headers: {
+              token: "Bearer " + user.token,
+            },
+          }
+        );
         setNewUsers(res.data);
       } catch (err) {
         console.log(err);

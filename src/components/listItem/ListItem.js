@@ -13,11 +13,14 @@ export default function ListItem({ index, item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get(`/api/movies/find/${item}`, {
-          headers: {
-            token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-          },
-        });
+        const res = await axios.get(
+          `https://netflix-clone-hkb.herokuapp.com/api/movies/find/${item}`,
+          {
+            headers: {
+              token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+            },
+          }
+        );
 
         setMovie(res.data);
       } catch (err) {

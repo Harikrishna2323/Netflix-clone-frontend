@@ -16,11 +16,14 @@ export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
 
   const handleDelete = async (id) => {
-    const res = await axios.delete("/api/users/" + id, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-      },
-    });
+    const res = await axios.delete(
+      "https://netflix-clone-hkb.herokuapp.com/api/users/" + id,
+      {
+        headers: {
+          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+        },
+      }
+    );
     console.log(res);
   };
   useEffect(() => {}, []);
@@ -28,11 +31,14 @@ export default function WidgetSm() {
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/api/users/", {
-          headers: {
-            token: "Bearer " + user.token,
-          },
-        });
+        const res = await axios.get(
+          "https://netflix-clone-hkb.herokuapp.com/api/users/",
+          {
+            headers: {
+              token: "Bearer " + user.token,
+            },
+          }
+        );
         setNewUsers(res.data);
       } catch (err) {
         console.log(err);

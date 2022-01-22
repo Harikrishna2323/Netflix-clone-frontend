@@ -15,7 +15,7 @@ export default function NewUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { data } = await axios.post(
-      "/api/users",
+      "https://netflix-clone-hkb.herokuapp.com/api/users",
       { username, password, email, phone, from },
       {
         headers: {

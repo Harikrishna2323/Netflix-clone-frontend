@@ -15,11 +15,14 @@ export default function UserList() {
 
   useEffect(() => {
     const getAllUsers = async () => {
-      const { data } = await axios.get("/api/users/", {
-        headers: {
-          token: "Bearer " + user.token,
-        },
-      });
+      const { data } = await axios.get(
+        "https://netflix-clone-hkb.herokuapp.com/api/users/",
+        {
+          headers: {
+            token: "Bearer " + user.token,
+          },
+        }
+      );
       setData(data);
     };
     getAllUsers();

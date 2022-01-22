@@ -80,11 +80,14 @@ export default function List({ list }) {
 
   useEffect(() => {
     const getLists = async () => {
-      const { data } = await axios.get("/api/lists", {
-        headers: {
-          token: "Bearer " + user.token,
-        },
-      });
+      const { data } = await axios.get(
+        "https://netflix-clone-hkb.herokuapp.com/api/lists",
+        {
+          headers: {
+            token: "Bearer " + user.token,
+          },
+        }
+      );
       console.log("lists:", data);
     };
     getLists();

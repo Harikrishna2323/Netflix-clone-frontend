@@ -18,21 +18,27 @@ export default function FeaturedInfo() {
   useEffect(() => {
     getUsers(dispatch);
     const getAllMovies = async () => {
-      const { data } = await axios.get("/api/movies/ismovie", {
-        headers: {
-          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-        },
-      });
+      const { data } = await axios.get(
+        "https://netflix-clone-hkb.herokuapp.com/api/movies/ismovie",
+        {
+          headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+          },
+        }
+      );
       setMovies(data);
     };
     getAllMovies();
 
     const getAllSeries = async () => {
-      const { data } = await axios.get("/api/movies/isseries", {
-        headers: {
-          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-        },
-      });
+      const { data } = await axios.get(
+        "https://netflix-clone-hkb.herokuapp.com/api/movies/isseries",
+        {
+          headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+          },
+        }
+      );
       console.log(data);
       setSeries(data.series);
     };

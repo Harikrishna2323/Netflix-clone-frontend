@@ -33,11 +33,15 @@ export const getUsers = async (dispatch) => {
 export const createUser = async (list, dispatch) => {
   dispatch(createUserStart());
   try {
-    const res = await axios.post("/api/users", list, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-      },
-    });
+    const res = await axios.post(
+      "https://netflix-clone-hkb.herokuapp.com/api/users",
+      list,
+      {
+        headers: {
+          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+        },
+      }
+    );
     dispatch(createUserSuccess(res.data));
   } catch (err) {
     dispatch(createUserFailure());
@@ -48,11 +52,14 @@ export const createUser = async (list, dispatch) => {
 export const deleteUser = async (id, dispatch) => {
   dispatch(deleteUserStart());
   try {
-    await axios.delete("/api/users/" + id, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-      },
-    });
+    await axios.delete(
+      "https://netflix-clone-hkb.herokuapp.com/api/users/" + id,
+      {
+        headers: {
+          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+        },
+      }
+    );
     dispatch(deleteUserSuccess(id));
   } catch (err) {
     dispatch(deleteUserFailure());

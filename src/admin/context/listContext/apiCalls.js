@@ -46,11 +46,14 @@ export const createList = async (list, dispatch) => {
 export const deleteList = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
-    await axios.delete("/api/lists/" + id, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
-      },
-    });
+    await axios.delete(
+      "https://netflix-clone-hkb.herokuapp.com/api/lists/" + id,
+      {
+        headers: {
+          token: "Bearer " + JSON.parse(localStorage.getItem("user")).token,
+        },
+      }
+    );
     dispatch(deleteListSuccess(id));
   } catch (err) {
     dispatch(deleteListFailure());

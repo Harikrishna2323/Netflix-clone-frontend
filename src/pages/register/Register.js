@@ -20,7 +20,10 @@ const Register = () => {
   const handleFinish = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/auth/register", { email, username, password });
+      await axios.post(
+        "https://netflix-clone-hkb.herokuapp.com/api/auth/register",
+        { email, username, password }
+      );
       navigate("/login");
     } catch (err) {}
   };

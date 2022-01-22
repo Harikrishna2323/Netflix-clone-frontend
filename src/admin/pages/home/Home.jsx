@@ -32,11 +32,14 @@ export default function AdminHome() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("/api/users/stats", {
-          headers: {
-            token: "Bearer " + user.token,
-          },
-        });
+        const res = await axios.get(
+          "https://netflix-clone-hkb.herokuapp.com/api/users/stats",
+          {
+            headers: {
+              token: "Bearer " + user.token,
+            },
+          }
+        );
         const statsList = res.data.sort(function (a, b) {
           return a._id - b._id;
         });
