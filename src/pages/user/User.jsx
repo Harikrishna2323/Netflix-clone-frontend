@@ -22,7 +22,7 @@ export default function User() {
     const getUser = async () => {
       const { data } = await axios.get(
         `https://netflix-clone-hkb.herokuapp.com/api/users/find/${id}`,
-        { username, email, phone, from },
+
         {
           headers: {
             token: "Bearer " + user.token,
@@ -47,7 +47,7 @@ export default function User() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { data } = await axios.patch(
-      `/api/users/${id}`,
+      `https://netflix-clone-hkb.herokuapp.com/api/users/${id}`,
       { username, email, password, phone, from },
       {
         headers: {
