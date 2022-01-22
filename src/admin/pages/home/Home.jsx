@@ -7,7 +7,7 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import axios from "axios";
 import { AuthContext } from "../../../authContext/AuthContext";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { UserContext } from "../../context/userContext/userContext";
+// import { UserContext } from "../../context/userContext/userContext";
 
 export default function AdminHome() {
   const { user } = useContext(AuthContext);
