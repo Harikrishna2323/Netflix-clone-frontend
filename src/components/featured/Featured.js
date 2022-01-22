@@ -13,11 +13,14 @@ export default function Featured({ type, setGenre }) {
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await axios.get(`/api/movies/random?type=${type}`, {
-          headers: {
-            token: "Bearer " + user.token,
-          },
-        });
+        const res = await axios.get(
+          `https://netflix-clone-hkb.herokuapp.com/api/movies/random?type=${type}`,
+          {
+            headers: {
+              token: "Bearer " + user.token,
+            },
+          }
+        );
         setMovie(res.data[0]);
       } catch (err) {
         console.log(err);
