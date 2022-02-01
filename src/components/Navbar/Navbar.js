@@ -34,9 +34,9 @@ const Navbar = () => {
           <span>My List</span> */}
         </div>
         <div className="right">
-          <Search className="icon" />
+          {/* <Search className="icon" />
           <span>Search</span>
-          <Notifications className="icon" />
+          <Notifications className="icon" /> */}
           <Link to="/profile">
             <img src={user.user.profilePic} alt="" />
           </Link>
